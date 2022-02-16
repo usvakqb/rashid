@@ -12,7 +12,7 @@ from pyrogram.types import Message
 from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 from config import REKU, SUDO_USERS
-from MusicTelethon.helpers.decorators import authorized_users_only
+from RekuMusic.helpers.decorators import authorized_users_only
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["تحميل", "تنزيل"], prefixes=f"{REKU}"))
 @authorized_users_only
