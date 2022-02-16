@@ -18,14 +18,14 @@ from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
 from pytgcalls.types.input_stream.quality import HighQualityAudio,    HighQualityVideo,    LowQualityVideo,    MediumQualityVideo
 from youtubesearchpython import VideosSearch
 from config import REKU, bot, call_py
-from MusicTelethon.helpers.queues import QUEUE, add_to_queue, get_queue, clear_queue
-from MusicTelethon.helpers.decorators import authorized_users_only
-from MusicTelethon.helpers.handlers import skip_current_song, skip_item
+from RekuMusic.helpers.queues import QUEUE, add_to_queue, get_queue, clear_queue
+from RekuMusic.helpers.decorators import authorized_users_only
+from RekuMusic.helpers.handlers import skip_current_song, skip_item
 from pyrogram.errors import FloodWait, MessageNotModified
 from youtubesearchpython import SearchVideos
 from yt_dlp import YoutubeDL
 from config import REKU, SUDO_USERS
-from MusicTelethon.helpers.merrors import capture_err
+from RekuMusic.helpers.merrors import capture_err
 ARQ_API_KEY = "QFOTZM-GSZUFY-CHGHRX-TDEHOZ-ARQ"
 aiohttpsession = aiohttp.ClientSession()
 arq = ARQ("https://thearq.tech", ARQ_API_KEY, aiohttpsession)
@@ -313,7 +313,7 @@ async def playfrom(client, m: Message):
    : {m.from_user.mention}**
 """,                    )
             await hmm.delete()
-            await m.reply(                f"  {lmt}     \n•  {REKU}_     **"            )
+            await m.reply(                f"  {lmt}     \nÂ•  {REKU}_     **"            )
         except Exception as e:
             await hmm.edit(f"**  ** \n`{e}`")
 
@@ -389,7 +389,7 @@ async def pause(client, m: Message):
     if chat_id in QUEUE:
         try:
             await call_py.pause_stream(chat_id)
-            await m.reply(                f"**    .**\n\n•        » `{REKU}_`"            )
+            await m.reply(                f"**    .**\n\nÂ•        Â» `{REKU}_`"            )
         except Exception as e:
             await m.reply(f"**  ** \n`{e}`")
     else:
